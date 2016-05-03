@@ -16,6 +16,12 @@ let actions = {
       type: 'COMPLETE_TODO',
       id: id
     }
+  },
+  changeUserId(){
+    return {
+      type: 'CHANGE_ID',
+      id: (Math.random()*100).toFixed(0)
+    }
   }
 }
 

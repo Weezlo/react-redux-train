@@ -23,9 +23,17 @@ export function reducer(state, action){
       break;
     case 'COMPLETE_TODO':
       let newTodosComplete =
-        state.todos.map(val => Object.assign(val, {completed: val.id === action.id?!val.completed:val.completed}));
+        state.todos.map(val => Object.assign({}, val, {completed: val.id === action.id?!val.completed:val.completed}));
       return Object.assign({}, state, {
         todos : newTodosComplete
+      });
+      break;
+    case 'CHANGE_ID':
+      return Object.assign({}, state, {
+        user: {
+          username: state.user.username,
+          id: action.id
+        }
       });
       break;
     default:
