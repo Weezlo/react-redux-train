@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {addTodo} from '../redux/actions';
 
 class TodoInput extends Component{
   constructor(){
@@ -15,7 +14,7 @@ class TodoInput extends Component{
   validateText(e){
     e.preventDefault();
     if(!this.state.inputText) return;
-    this.props.dispatch(addTodo(this.state.inputText));
+    this.props.addTodo(this.state.inputText);
     this.setState({inputText:''});
   }
 
